@@ -1,16 +1,34 @@
-function hasTargetSum(array, target) {
-for (let i=0; i<array.length; i++) {
-  let complement = target - array[i]
-  for (let j=i+1; j<array.length; j++) {
-    if (complement === array[j]) {
-      return true
-    }
-  } 
+// function hasTargetSum(array, target) {
+// for (let i=0; i<array.length; i++) {
+//   let complement = target - array[i]
+//   for (let j=i+1; j<array.length; j++) {
+//     if (complement === array[j]) {
+//       return true
+//     }
+//   } 
+// }
+// return false
+// }
+
+
+function hasTargetSum (array, target) {
+let seenNumbers = {};
+
+for (const number of array) {
+  let complement = target - number;
+  console.log(seenNumbers )
+  if(complement in seenNumbers) {
+    return true
+  }
+  else {
+    seenNumbers[number] = true
+  }
 }
 return false
 }
 
 
+hasTargetSum ([3,7,4,18], 21)
 
 /* 
   Write the Big O time complexity of your function here
